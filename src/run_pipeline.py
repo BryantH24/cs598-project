@@ -52,6 +52,12 @@ PIPELINE_STEPS = [
         'name': 'Enrich Weather Data',
         'notebook': '6_enrich_weather_data/enrich_game_weather_data.ipynb',
         'description': 'Add weather data to game records'
+    },
+    {
+        'number': 7,
+        'name': 'Enrich School Weather Data',
+        'notebook': '7_fetch_school_weather_data/enrich_school_weather_data.ipynb',
+        'description': 'Add weather data to school records'
     }
 ]
 

@@ -16,13 +16,22 @@ Subfolder steps:
 - `3_preprocess_school_matching`: uses Google Gemini LLM to match school names from the Kaggle dataset with the catalog.data.gov dataset. It creates a file to store this mapping, along with the corresponding school's location (latitude and longitude) from the catalog.data.gov data set.
 - `4_fetch_venue_locations`: uses collegefootballdata.com to retrieve game locations per venue, used for neutral site game. 
 - `5_combine_cfb_and_locations`: processes the enrichment of home, away, and actual locations for game data. It uses both the location mapping from step 3 as well as the venue location from step 4 to handle neutral site games. 
-- `6_enrich_weather_data`: uses open-meteo.com api to add weather data to the dataset. The game weather data script adds weather data for each specific game, while the school weather data script determines the average weather for a specific location during football season and creates a new school to weather data set. 
+- `6_enrich_games_weather_data`: uses open-meteo.com api to add weather data to the dataset. The game weather data script adds weather data for each specific game. 
+- `7_fetch_school_weather_data`: The school weather data script determines the average weather for a specific location during football season and creates a new school to weather data set. 
 
 ## Steps to Run Data Pipeline
-1. Populate `cfb_api_utils.py` with API key from collegefootballdata.com
-2. Populate `llm_utils.py` with API key from Google Gemini
-3. ... 
 
+### Add API Keys
+1. Populate `cfb_api_utils.py` with API key from collegefootballdata.com (needed for steps 4, 5)
+2. Populate `llm_utils.py` with API key from Google Gemini (needed for steps 2, 3)
+
+### Prepare Python Environment
+Prerequisite requirements: Python 3.13 installed on machine
+1. Create a Virtual Environment: `python3 -m venv venv`
+2. Activate it: `source venv/bin/activate`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run the pipeline, example command: `venv/bin/python3 src/run_pipeline.py --step 1,4,5,6 --dataSubsetRows 5`
+* skip steps 2 and 3 since they use Gemini LLM, skip step 7 since it takes a long time and can hit open-meteo daily API limit. 
 
 
 ## Known Issues

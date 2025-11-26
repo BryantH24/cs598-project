@@ -52,6 +52,12 @@ PIPELINE_STEPS = [
         'name': 'Enrich Weather Data',
         'notebook': '6_enrich_weather_data/enrich_game_weather_data.ipynb',
         'description': 'Add weather data to game records'
+    },
+    {
+        'number': 8,
+        'name': 'Generate Codebooks',
+        'notebook': '8_generate_codebooks/generate_codebook.ipynb',
+        'description': 'Generate codebooks for all CSV files in the repository'
     }
 ]
 
@@ -134,14 +140,9 @@ Examples:
     return parser.parse_args()
 
 def get_steps_to_run(args):
-    """Determine which steps to run based on command line arguments."""
     if args.step:
-        for step_num in args.step:
-            if step_num < 1 or step_num > len(PIPELINE_STEPS):
-                raise ValueError(f"Step {step_num} is not valid. Valid steps are 1-{len(PIPELINE_STEPS)}")
-        return [PIPELINE_STEPS[step_num - 1] for step_num in args.step]
-    else:
-        return PIPELINE_STEPS
+        return [step for step in PIPELINE_STEPS if step['number'] in args.step]
+    return PIPELINE_STEPS
 
 def main():
     """Main pipeline execution function."""

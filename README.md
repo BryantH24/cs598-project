@@ -8,7 +8,7 @@ The raw datasets from Kaggle and catalog.data.gov are stored under `/college_foo
 
 The scripts needed to process, enrich, and analyze the data are stored under `/src`. Each subfolder in the source folder begins with a number to indicate the ordering for execution, but each step can also be executed independently as long as it's prerequisite files are available. 
 
-The `utils` folder contains utility modules needed to run the script. `llm_utils.py` stores the Google Gemini 
+The `utils` folder contains utility modules needed to run the script. `llm_utils.py` stores the Google Gemini API key and provides a reusable request function. `cfb_api_utils.py` stores the collegefootballdata.com API key. `get_file_paths.py` provides a utility function for getting the data file names from the CFB and NCES data.
 
 Subfolder steps: 
 - `1_fetch_data`: retrieves the raw CSV files from Kaggle and catalog.data.gov and stores them into the repository. 
@@ -31,7 +31,7 @@ Prerequisite requirements: Python 3.13 installed on machine
 2. Activate it: `source venv/bin/activate`
 3. Install dependencies: `pip install -r requirements.txt`
 4. Run the pipeline, example command: `venv/bin/python3 src/run_pipeline.py --step 1,4,5,6 --dataSubsetRows 5`
-* skip steps 2 and 3 since they use Gemini LLM, skip step 7 since it takes a long time and can hit open-meteo daily API limit. 
+* Notes for reproducing: skip steps 2 and 3 since they use Gemini LLM, skip step 7 since it takes a long time and can hit open-meteo daily API limit. 
 
 
 ## Known Issues

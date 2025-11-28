@@ -18,7 +18,7 @@ Subfolder steps:
 - `5_combine_cfb_and_locations`: processes the enrichment of home, away, and actual locations for game data. It uses both the location mapping from step 3 as well as the venue location from step 4 to handle neutral site games. 
 - `6_enrich_games_weather_data`: uses open-meteo.com api to add weather data to the game dataset. The game weather data script adds weather data for each specific game. 
 - `7_fetch_school_weather_data`: The school weather data script determines the average weather for a specific location during football season and creates a new school to weather data set. 
-- `8_generate_codebooks`: uses ydata_profiling module to create codebooks for each csv in the repository (source data and intermediate files). Outputs are stored in Box folder, the output files are too large for Github. 
+- `8_generate_codebooks`: uses ydata_profiling module to create codebooks for each csv in the repository (source data and intermediate files). Outputs are stored in Box folder, the output files are too large for Github. https://uofi.box.com/s/9bq8drpo18cjnwaw567lexs3tna1vkwm
 
 ## Steps to Run Data Pipeline
 

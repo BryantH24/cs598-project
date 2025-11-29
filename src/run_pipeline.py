@@ -64,6 +64,12 @@ PIPELINE_STEPS = [
         'name': 'Generate Codebooks',
         'notebook': '8_generate_codebooks/generate_codebook.ipynb',
         'description': 'Generate codebooks for all CSV files in the repository'
+    },
+    {
+        'number': 9,
+        'name': 'Analyze Data',
+        'notebook': '9_analyze_data/analyze_data.ipynb',
+        'description': 'Analyze weather with game outcome'
     }
 ]
 

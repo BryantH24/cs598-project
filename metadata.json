@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "@id": "https://github.com/bryanthou/cs598-project#dataset",
+  "name": "College Football Dataset with Location and Weather Data",
+  "description": "Comprehensive college football game data for NCAA FBS games from 2002-2024, enriched with geographical location data and weather information. Each of the 18,636 game records includes team statistics, scores, game locations (latitude/longitude), and weather conditions at game time including temperature, humidity, wind speed, and precipitation.",
+  "url": "https://github.com/bryanthou/cs598-project/tree/main/intermediate_files/cfb_with_weather.csv",
+  "creator": {
+    "@type": "Person",
+    "name": "Bryant Hou",
+    "givenName": "Bryant",
+    "familyName": "Hou",
+    "email": "bhhou2@illinois.edu",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "University of Illinois Urbana-Champaign",
+      "url": "https://illinois.edu",
+      "identifier": "https://ror.org/047426m28"
+    }
+  },
+  "dateCreated": "2025-11-29",
+  "keywords": [
+    "College Football",
+    "Sports Analytics",
+    "Weather Correlation Analysis"
+  ],
+  "isBasedOn": [
+    {
+      "@type": "Dataset",
+      "name": "College Football Team Stats 2002 to January 2024",
+      "url": "https://www.kaggle.com/datasets/cviaxmiwnptr/college-football-team-stats-2002-to-january-2024",
+      "publisher": {
+        "@type": "Person",
+        "name": "cviaxmiwnptr"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "Postsecondary School Locations 2020-21",
+      "url": "https://catalog.data.gov/dataset/postsecondary-school-locations-2020-21-c5470",
+      "publisher": {
+        "@type": "Organization",
+        "name": "U.S. Department of Education"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "College Football Data API",
+      "url": "https://collegefootballdata.com/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "CollegeFootballData.com"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "Open-Meteo Weather API",
+      "url": "https://open-meteo.com/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open-Meteo"
+      }
+    }
+  ],
+  "size": "18636 rows",
+  "encodingFormat": "text/csv",
+  "version": "1.0"
+}

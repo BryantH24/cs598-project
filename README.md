@@ -4,7 +4,7 @@
 This repository contains a college football dataset covering all NCAA FBS games from 2002 to 2024 from https://www.kaggle.com/datasets/cviaxmiwnptr/college-football-team-stats-2002-to-january-2024. This data is enriched by matching each school with it's official school name from https://catalog.data.gov/dataset/postsecondary-school-locations-2020-21-c5470 for location data, and https://collegefootballdata.com/ for neutral game data. Weather data for the games as well as the average weather for the school's location is sourced from https://open-meteo.com. 
 
 ## Organization
-The raw datasets from Kaggle and catalog.data.gov are stored under `/college_football_data` and `/postsecondary_school_locations` respectively. Intermediate files generated during the execution of scripts are stored in `/intermediate_files`. 
+The raw datasets from Kaggle and catalog.data.gov are stored under `/college_football_data` and `/postsecondary_school_locations` respectively. Intermediate files generated during the execution of scripts are stored in `/intermediate_files`. Final output is stored in `/output`
 
 The scripts needed to process, enrich, and analyze the data are stored under `/src`. Each subfolder in the source folder begins with a number to indicate the ordering for execution, but each step can also be executed independently as long as it's prerequisite files are available. 
 
@@ -19,6 +19,8 @@ Subfolder steps:
 - `6_enrich_games_weather_data`: uses open-meteo.com api to add weather data to the game dataset. The game weather data script adds weather data for each specific game. 
 - `7_fetch_school_weather_data`: The school weather data script determines the average weather for a specific location during football season and creates a new school to weather data set. 
 - `8_generate_codebooks`: uses ydata_profiling module to create codebooks for each csv in the repository (source data and intermediate files). Outputs are stored in Box folder, the output files are too large for Github. https://uofi.box.com/s/9bq8drpo18cjnwaw567lexs3tna1vkwm
+- `9_analyze_data`: analyzes weather correlation with game outcomes and generates analysis results.
+- `10_add_provenance`: generates provenance diagrams and JSON using W3C PROV standard (prov Python package).
 
 ## Steps to Run Data Pipeline
 
@@ -31,9 +33,12 @@ Prerequisite requirements: Python 3.13 installed on machine
 1. Create a Virtual Environment: `python3 -m venv venv`
 2. Activate it: `source venv/bin/activate`
 3. Install dependencies: `pip install -r requirements.txt`
-4. Run the pipeline, example command: `venv/bin/python3 src/run_pipeline.py --step 1,4,5,6,8 --dataSubsetRows 5`
+4. Run the pipeline, example command: `venv/bin/python3 src/run_pipeline.py --step 1,4,5,6,8,10 --dataSubsetRows 5`
 * Notes for reproducing: skip steps 2 and 3 since they use Gemini LLM, skip step 7 since it takes a long time and can hit open-meteo daily API limit. 
 
+
+## Output
+Output folder contains text results from analysis step and provenance diagram/JSON
 
 ## Known Issues
 - Steps requiring Google Gemini LLM (2, 3) may not produce exact results on multiple runs. 

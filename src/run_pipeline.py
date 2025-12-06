@@ -70,6 +70,12 @@ PIPELINE_STEPS = [
         'name': 'Analyze Data',
         'notebook': '9_analyze_data/analyze_data.ipynb',
         'description': 'Analyze weather with game outcome'
+    },
+    {
+        'number': 10,
+        'name': 'Generate Provenance',
+        'notebook': '10_add_provenance/add_provenance.ipynb',
+        'description': 'Generate provenance diagram for the pipeline'
     }
 ]
 

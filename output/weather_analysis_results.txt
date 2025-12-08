@@ -1,14 +1,14 @@
 Home teams analysis:
-Games: 15420 familiar, 2520 unfamiliar
-Win rates: 62.95071335927367% vs 61.94444444444444%
-Advantage: 1.0062689148292225%, p = 0.34376372513672593
+Games: 15 familiar, 5 unfamiliar
+Win rates: 73.33333333333333% vs 100.0%
+Advantage: -26.66666666666667%, p = 0.5186050164287255
 
 Away teams analysis:
-Games: 13727 familiar, 4213 unfamiliar
-Win rates: 37.39345814817513% vs 36.5297887491099%
-Advantage: 0.8636693990652311%, p = 0.31907049692655765
+Games: 19 familiar, 1 unfamiliar
+Win rates: 21.052631578947366% vs 0.0%
+Advantage: 21.052631578947366%, p = 1.0
 
-Home field advantage: 25.618729096989966%
+Home field advantage: 60.00000000000001%
 Home teams: No significant weather effect
 Away teams: No significant weather effect
 
